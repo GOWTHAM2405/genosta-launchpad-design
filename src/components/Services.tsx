@@ -12,37 +12,41 @@ const Services = () => {
     {
       icon: <Palette size={36} />,
       title: "Branding",
+      color: "text-genosta-orange",
       description: "Create a distinct identity that resonates with your audience and sets you apart from competitors.",
       features: ["Brand Strategy", "Visual Identity", "Brand Guidelines", "Logo Design"]
     },
     {
       icon: <TrendingUp size={36} />,
       title: "Marketing",
+      color: "text-genosta-purple-vivid",
       description: "Data-driven campaigns that boost your visibility and drive meaningful engagement.",
       features: ["Digital Strategy", "Social Media", "SEO Optimization", "Content Marketing"]
     },
     {
       icon: <FileText size={36} />,
       title: "Content",
+      color: "text-genosta-blue",
       description: "Compelling narratives and visuals that capture attention and communicate your message.",
       features: ["Copywriting", "Video Production", "Photography", "Animation"]
     },
     {
       icon: <Code size={36} />,
       title: "Creative Tech",
+      color: "text-genosta-sky-blue",
       description: "Innovative digital solutions that solve problems and enhance user experience.",
       features: ["Web Development", "Mobile Apps", "UX/UI Design", "E-commerce"]
     }
   ];
 
   return (
-    <section id="services" className="section-padding">
+    <section id="services" className="section-padding bg-black">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-6 text-white">
             What We <span className="text-gradient">Do</span>
           </h2>
-          <p className="text-lg text-foreground/80">
+          <p className="text-lg text-white/80">
             We offer a comprehensive suite of digital services to help your business thrive in the digital landscape.
           </p>
         </div>
@@ -51,21 +55,21 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] group"
+              className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:translate-y-[-4px] group"
             >
               <div className="p-6">
                 <div className="flex items-start">
-                  <div className="mr-4 text-genosta-purple-vivid group-hover:text-genosta-orange transition-colors">
+                  <div className={`mr-4 ${service.color} transition-colors group-hover:scale-110 transform duration-300`}>
                     {service.icon}
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold font-poppins mb-3">{service.title}</h3>
-                    <p className="text-foreground/70 mb-4">{service.description}</p>
+                    <h3 className="text-2xl font-bold font-poppins mb-3 text-white">{service.title}</h3>
+                    <p className="text-white/70 mb-4">{service.description}</p>
                     <ul className="grid grid-cols-2 gap-2">
                       {service.features.map((feature, i) => (
                         <li key={i} className="flex items-center">
-                          <span className="w-2 h-2 bg-genosta-purple-vivid rounded-full mr-2"></span>
-                          <span className="text-sm">{feature}</span>
+                          <span className={`w-2 h-2 ${service.color.replace('text-', 'bg-')} rounded-full mr-2`}></span>
+                          <span className="text-sm text-white">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -77,8 +81,11 @@ const Services = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <Button asChild size="lg" className="bg-genosta-purple-vivid hover:bg-genosta-purple-dark">
-            <a href="#contact">Discuss Your Project</a>
+          <Button asChild size="lg" className="bg-white text-black hover:bg-white/90 group">
+            <a href="#contact" className="flex items-center gap-2">
+              Discuss Your Project
+              <span className="w-2 h-2 bg-genosta-orange rounded-full group-hover:scale-150 transition-transform"></span>
+            </a>
           </Button>
         </div>
       </div>

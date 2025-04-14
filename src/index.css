@@ -89,6 +89,13 @@
     100% { filter: blur(0); opacity: 1; }
   }
   
+  /* New cursor-follow animation */
+  @keyframes logo-glow {
+    0% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.1); }
+    50% { box-shadow: 0 0 35px rgba(255, 255, 255, 0.3); }
+    100% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.1); }
+  }
+  
   .animate-float {
     animation: float 4s ease-in-out infinite;
   }
@@ -107,6 +114,10 @@
   
   .animate-blur-in {
     animation: blur-in 1.5s forwards;
+  }
+  
+  .animate-logo-glow {
+    animation: logo-glow 3s infinite;
   }
   
   /* Accent elements */
@@ -129,5 +140,11 @@
   
   .glass-card {
     @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl;
+  }
+  
+  /* Logo cursor follow effect */
+  .logo-follow {
+    @apply transition-transform duration-200 ease-out relative;
+    transform-style: preserve-3d;
   }
 }

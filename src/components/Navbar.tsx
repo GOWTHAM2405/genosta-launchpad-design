@@ -34,13 +34,13 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="/" className="flex items-center gap-3">
-          {/* Logo space with animation */}
-          <div className="w-12 h-12 relative overflow-hidden rounded-lg animate-blur-in">
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-white/5 animate-pulse-subtle"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-xl font-bold text-white">G</span>
-            </div>
-            <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-white/30 rounded-full animate-float"></div>
+          {/* Genosta Logo */}
+          <div className="w-10 h-10 relative overflow-hidden animate-blur-in">
+            <img 
+              src="/lovable-uploads/858b36d2-94bd-4858-9316-3228425166b2.png"
+              alt="Genosta Logo"
+              className="w-full h-full object-contain"
+            />
           </div>
           <span className="text-2xl font-bold font-poppins text-white">
             <span className="text-gradient">Genosta</span>

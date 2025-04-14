@@ -1,8 +1,50 @@
 
 import { ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { useEffect, useRef } from 'react';
 
 const Hero = () => {
+  const logoRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const logoElement = logoRef.current;
+    if (!logoElement) return;
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      const { left, top, width, height } = logoElement.getBoundingClientRect();
+      const centerX = left + width / 2;
+      const centerY = top + height / 2;
+      
+      // Calculate mouse position relative to center
+      const deltaX = (e.clientX - centerX) / 25;
+      const deltaY = (e.clientY - centerY) / 25;
+      
+      // Apply the transform (limited range of movement)
+      logoElement.style.transform = `perspective(1000px) rotateY(${deltaX}deg) rotateX(${-deltaY}deg)`;
+    };
+    
+    const handleMouseLeave = () => {
+      // Reset to original position with smooth transition
+      logoElement.style.transition = 'transform 0.5s ease-out';
+      logoElement.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+    };
+    
+    const handleMouseEnter = () => {
+      logoElement.style.transition = 'transform 0.1s ease-out';
+    };
+    
+    // Add event listeners to document because we want to track mouse anywhere
+    document.addEventListener('mousemove', handleMouseMove);
+    logoElement.addEventListener('mouseleave', handleMouseLeave);
+    logoElement.addEventListener('mouseenter', handleMouseEnter);
+    
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      logoElement?.removeEventListener('mouseleave', handleMouseLeave);
+      logoElement?.removeEventListener('mouseenter', handleMouseEnter);
+    };
+  }, []);
+
   return (
     <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden bg-black">
       {/* Animated background elements */}
@@ -35,21 +77,22 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="md:w-1/2 mt-10 md:mt-0 animate-blur-in" style={{ animationDelay: '0.6s' }}>
-            <div className="relative">
+          <div className="md:w-1/2 mt-12 md:mt-0 animate-blur-in" style={{ animationDelay: '0.6s' }}>
+            <div className="relative flex justify-center">
               {/* Decorative elements */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-white/10 rounded-full animate-float -z-10" />
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-gray-400/10 rounded-full animate-float -z-10" style={{ animationDelay: '2s' }} />
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-white/5 rounded-full animate-float -z-10" />
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-gray-400/5 rounded-full animate-float -z-10" style={{ animationDelay: '2s' }} />
               
-              {/* Main image with animated border */}
-              <div className="p-1 rounded-2xl bg-gradient-to-br from-white via-gray-500 to-black animate-spin-slow bg-size-200 relative">
-                <div className="rounded-xl overflow-hidden bg-black">
-                  <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
-                    alt="Digital Agency Team Working" 
-                    className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                  />
-                </div>
+              {/* Genosta Logo with cursor follow effect */}
+              <div 
+                ref={logoRef}
+                className="logo-follow p-6 rounded-2xl bg-black border border-white/10 animate-logo-glow w-[280px] h-[280px] flex items-center justify-center"
+              >
+                <img 
+                  src="/lovable-uploads/5c7e3842-0e6a-48b0-9399-40b5ff7ca409.png" 
+                  alt="Genosta Logo" 
+                  className="w-full h-auto object-contain"
+                />
               </div>
             </div>
           </div>

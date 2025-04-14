@@ -49,14 +49,17 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#about" className="text-black hover:text-gray-600 transition-colors">
-            About
-          </a>
           <a href="#services" className="text-black hover:text-gray-600 transition-colors">
             Services
           </a>
           <a href="#projects" className="text-black hover:text-gray-600 transition-colors">
             Projects
+          </a>
+          <a href="#why-us" className="text-black hover:text-gray-600 transition-colors">
+            Why Us
+          </a>
+          <a href="#about" className="text-black hover:text-gray-600 transition-colors">
+            About
           </a>
           <a href="#testimonials" className="text-black hover:text-gray-600 transition-colors">
             Testimonials
@@ -86,13 +89,6 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
           <a 
-            href="#about" 
-            className="text-black hover:text-gray-600 py-2 transition-colors"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            About
-          </a>
-          <a 
             href="#services" 
             className="text-black hover:text-gray-600 py-2 transition-colors"
             onClick={() => setMobileMenuOpen(false)}
@@ -105,6 +101,20 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(false)}
           >
             Projects
+          </a>
+          <a 
+            href="#why-us" 
+            className="text-black hover:text-gray-600 py-2 transition-colors"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Why Us
+          </a>
+          <a 
+            href="#about" 
+            className="text-black hover:text-gray-600 py-2 transition-colors"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            About
           </a>
           <a 
             href="#testimonials" 

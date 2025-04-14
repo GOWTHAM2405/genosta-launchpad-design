@@ -28,7 +28,7 @@ const Navbar = () => {
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-black/90 shadow-md backdrop-blur-sm py-3' 
+          ? 'bg-white/90 shadow-md backdrop-blur-sm py-3' 
           : 'bg-transparent py-5'
       }`}
     >
@@ -37,32 +37,32 @@ const Navbar = () => {
           {/* Genosta Logo */}
           <div className="w-10 h-10 relative overflow-hidden animate-blur-in">
             <img 
-              src="/lovable-uploads/858b36d2-94bd-4858-9316-3228425166b2.png"
+              src="/lovable-uploads/77ddd6ca-c7e9-4603-a7c5-2f7942460531.png"
               alt="Genosta Logo"
               className="w-full h-full object-contain"
             />
           </div>
-          <span className="text-2xl font-bold font-poppins text-white">
+          <span className="text-2xl font-bold font-poppins text-black">
             <span className="text-gradient">Genosta</span>
           </span>
         </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#about" className="text-white hover:text-gray-300 transition-colors">
+          <a href="#about" className="text-black hover:text-gray-600 transition-colors">
             About
           </a>
-          <a href="#services" className="text-white hover:text-gray-300 transition-colors">
+          <a href="#services" className="text-black hover:text-gray-600 transition-colors">
             Services
           </a>
-          <a href="#projects" className="text-white hover:text-gray-300 transition-colors">
+          <a href="#projects" className="text-black hover:text-gray-600 transition-colors">
             Projects
           </a>
-          <a href="#testimonials" className="text-white hover:text-gray-300 transition-colors">
+          <a href="#testimonials" className="text-black hover:text-gray-600 transition-colors">
             Testimonials
           </a>
-          <Button asChild>
-            <a href="#contact" className="bg-white hover:bg-gray-200 text-black">
+          <Button asChild variant="default" className="bg-black text-white hover:bg-gray-800">
+            <a href="#contact">
               Get Started
             </a>
           </Button>
@@ -70,7 +70,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-white hover:text-gray-300"
+          className="md:hidden text-black hover:text-gray-600"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
@@ -80,42 +80,43 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div 
-        className={`md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-sm shadow-md transform transition-transform duration-300 ${
+        className={`md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-sm shadow-md transform transition-transform duration-300 ${
           mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
           <a 
             href="#about" 
-            className="text-white hover:text-gray-300 py-2 transition-colors"
+            className="text-black hover:text-gray-600 py-2 transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
             About
           </a>
           <a 
             href="#services" 
-            className="text-white hover:text-gray-300 py-2 transition-colors"
+            className="text-black hover:text-gray-600 py-2 transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
             Services
           </a>
           <a 
             href="#projects" 
-            className="text-white hover:text-gray-300 py-2 transition-colors"
+            className="text-black hover:text-gray-600 py-2 transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
             Projects
           </a>
           <a 
             href="#testimonials" 
-            className="text-white hover:text-gray-300 py-2 transition-colors"
+            className="text-black hover:text-gray-600 py-2 transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
             Testimonials
           </a>
           <Button 
             asChild 
-            className="w-full bg-white hover:bg-gray-200 text-black"
+            variant="default"
+            className="w-full bg-black text-white hover:bg-gray-800"
             onClick={() => setMobileMenuOpen(false)}
           >
             <a href="#contact">

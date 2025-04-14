@@ -17,8 +17,8 @@ const About = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-black text-white rounded-xl p-6 shadow-lg card-hover group">
-            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-genosta-orange/20 transition-colors">
-              <Users className="text-genosta-orange" size={24} />
+            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+              <Users className="text-white" size={24} />
             </div>
             <h3 className="text-xl font-semibold font-poppins mb-3">Founder-Led</h3>
             <p className="text-white/70">
@@ -27,8 +27,8 @@ const About = () => {
           </div>
 
           <div className="bg-black text-white rounded-xl p-6 shadow-lg card-hover group">
-            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-genosta-purple-vivid/20 transition-colors">
-              <Lightbulb className="text-genosta-purple-vivid" size={24} />
+            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+              <Lightbulb className="text-white" size={24} />
             </div>
             <h3 className="text-xl font-semibold font-poppins mb-3">Innovation-First</h3>
             <p className="text-white/70">
@@ -37,8 +37,8 @@ const About = () => {
           </div>
 
           <div className="bg-black text-white rounded-xl p-6 shadow-lg card-hover group">
-            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-genosta-blue/20 transition-colors">
-              <Code className="text-genosta-blue" size={24} />
+            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+              <Code className="text-white" size={24} />
             </div>
             <h3 className="text-xl font-semibold font-poppins mb-3">Tech-Driven</h3>
             <p className="text-white/70">

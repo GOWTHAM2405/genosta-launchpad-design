@@ -34,9 +34,13 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="/" className="flex items-center gap-3">
-          {/* Logo placeholder */}
-          <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-r from-genosta-purple to-genosta-orange animate-pulse-subtle"></div>
+          {/* Logo space with animation */}
+          <div className="w-12 h-12 relative overflow-hidden rounded-lg animate-blur-in">
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-white/5 animate-pulse-subtle"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-xl font-bold text-white">G</span>
+            </div>
+            <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-white/30 rounded-full animate-float"></div>
           </div>
           <span className="text-2xl font-bold font-poppins text-white">
             <span className="text-gradient">Genosta</span>
@@ -45,20 +49,20 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#about" className="text-white hover:text-genosta-orange transition-colors">
+          <a href="#about" className="text-white hover:text-gray-300 transition-colors">
             About
           </a>
-          <a href="#services" className="text-white hover:text-genosta-orange transition-colors">
+          <a href="#services" className="text-white hover:text-gray-300 transition-colors">
             Services
           </a>
-          <a href="#projects" className="text-white hover:text-genosta-orange transition-colors">
+          <a href="#projects" className="text-white hover:text-gray-300 transition-colors">
             Projects
           </a>
-          <a href="#testimonials" className="text-white hover:text-genosta-orange transition-colors">
+          <a href="#testimonials" className="text-white hover:text-gray-300 transition-colors">
             Testimonials
           </a>
           <Button asChild>
-            <a href="#contact" className="bg-genosta-orange hover:bg-genosta-orange/90 text-white">
+            <a href="#contact" className="bg-white hover:bg-gray-200 text-black">
               Get Started
             </a>
           </Button>
@@ -66,7 +70,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-white hover:text-genosta-orange"
+          className="md:hidden text-white hover:text-gray-300"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
@@ -83,35 +87,35 @@ const Navbar = () => {
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
           <a 
             href="#about" 
-            className="text-white hover:text-genosta-orange py-2 transition-colors"
+            className="text-white hover:text-gray-300 py-2 transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
             About
           </a>
           <a 
             href="#services" 
-            className="text-white hover:text-genosta-orange py-2 transition-colors"
+            className="text-white hover:text-gray-300 py-2 transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
             Services
           </a>
           <a 
             href="#projects" 
-            className="text-white hover:text-genosta-orange py-2 transition-colors"
+            className="text-white hover:text-gray-300 py-2 transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
             Projects
           </a>
           <a 
             href="#testimonials" 
-            className="text-white hover:text-genosta-orange py-2 transition-colors"
+            className="text-white hover:text-gray-300 py-2 transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
             Testimonials
           </a>
           <Button 
             asChild 
-            className="w-full bg-genosta-orange hover:bg-genosta-orange/90 text-white"
+            className="w-full bg-white hover:bg-gray-200 text-black"
             onClick={() => setMobileMenuOpen(false)}
           >
             <a href="#contact">

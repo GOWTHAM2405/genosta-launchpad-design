@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ArrowRight, ExternalLink, ChevronRight, ChevronLeft } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -8,36 +7,28 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      category: "Digital Retail",
-      description: "A cutting-edge e-commerce platform with seamless user experience and advanced product filtering.",
-      image: "https://images.unsplash.com/photo-1610852951725-3f7b0c1e470b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-      features: ["Custom CMS", "Payment Integration", "Inventory Management", "Analytics Dashboard"],
+      title: "Flobi",
+      category: "South Indian Snack Brand",
+      description: "A traditional South Indian snack brand offering authentic homemade savory delights through their online platform. We crafted their brand identity, designed eye-catching packaging, and developed their digital marketing strategy.",
+      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      features: ["Brand Identity", "Packaging Design", "Digital Marketing", "E-commerce Strategy"],
       color: "from-genosta-orange to-genosta-purple-vivid"
     },
     {
-      title: "Snack Subscription",
-      category: "FMCG Startup",
-      description: "A monthly subscription service delivering curated artisanal snacks directly to customers' doors.",
-      image: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-      features: ["Subscription Management", "Customer Portal", "Logistics Integration", "Preference Learning"],
+      title: "Sparrow Refugee",
+      category: "Social Initiative",
+      description: "A noble initiative focused on protecting house sparrows through community engagement. We developed comprehensive digital strategies, created impactful branding, and managed outreach campaigns with schools and organizations.",
+      image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      features: ["Digital Strategy", "Community Outreach", "Educational Content", "Brand Development"],
       color: "from-genosta-purple-vivid to-genosta-blue"
     },
     {
-      title: "Gifting Platform",
-      category: "Experiential Commerce",
-      description: "A digital gifting solution that combines physical products with personalized digital experiences.",
-      image: "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-      features: ["Gift Customization", "Scheduled Delivery", "AR Experiences", "Recipient Experience"],
+      title: "Time Keeper",
+      category: "Desktop Application",
+      description: "An innovative Windows desktop widget that helps users visualize their time progress throughout the year, month, and day. Our team handled the product design, user experience, and marketing strategy development.",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      features: ["UI/UX Design", "Product Strategy", "Visual Design", "Marketing Planning"],
       color: "from-genosta-blue to-genosta-sky-blue"
-    },
-    {
-      title: "Smart Home App",
-      category: "IoT Technology",
-      description: "An intuitive mobile application for controlling smart home devices with voice and gesture recognition.",
-      image: "https://images.unsplash.com/photo-1558002038-2c021ae8c23a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-      features: ["Device Management", "Scene Creation", "Voice Control", "Energy Analytics"],
-      color: "from-genosta-sky-blue to-genosta-orange"
     }
   ];
 

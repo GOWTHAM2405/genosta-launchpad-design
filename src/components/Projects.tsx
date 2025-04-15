@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink, ChevronRight, ChevronLeft } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
@@ -42,7 +43,6 @@ const Projects = () => {
 
   return (
     <section id="projects" className="section-padding bg-white text-black relative">
-      {/* Animated background elements */}
       <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black/5 to-transparent"></div>
       <div className="absolute bottom-0 right-0 w-32 h-32 rounded-full bg-genosta-orange/10 blur-xl animate-float"></div>
       <div className="absolute top-1/3 left-1/4 w-2 h-2 rounded-full bg-genosta-purple-vivid animate-float"></div>
@@ -126,11 +126,9 @@ const Projects = () => {
           
           <div className="order-1 lg:order-2">
             <div className="relative">
-              {/* Decorative elements */}
               <div className="absolute -top-6 -right-6 w-32 h-32 bg-genosta-purple/10 rounded-full animate-pulse-subtle -z-10" />
               <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-genosta-orange/10 rounded-full animate-pulse-subtle -z-10" />
               
-              {/* Project image with animated border */}
               <div className={`p-1 rounded-lg overflow-hidden bg-gradient-to-r ${projects[activeProject].color} animate-pulse-subtle shadow-2xl transition-all duration-500`}>
                 <div className="relative aspect-video bg-white">
                   <img 
@@ -140,13 +138,13 @@ const Projects = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 flex items-end">
                     <div className="p-4 md:p-6">
-                      <a 
-                        href="#" 
+                      <Link 
+                        to={`/projects/${projects[activeProject].title.toLowerCase().replace(' ', '-')}`}
                         className="inline-flex items-center gap-2 text-white hover:text-genosta-orange transition-colors"
                       >
                         <ExternalLink size={16} />
                         <span className="font-medium">View Case Study</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

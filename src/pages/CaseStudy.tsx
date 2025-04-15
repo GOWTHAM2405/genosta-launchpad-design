@@ -9,15 +9,18 @@ const projectData = {
   'flayro-bites': {
     title: 'Flayro Bites',
     category: 'South Indian Snack Brand',
-    overview: 'Flayro Bites brings authentic South Indian snacks to food lovers through their online platform, offering traditional flavors with modern convenience.',
+    overview: 'A home-based South Indian snack brand offering authentic and addictive savory delights through their online platform. Genosta built their brand identity, designed eye-catching packaging, and developed their digital marketing strategy.',
     contributions: [
       'Brand Identity Development',
       'Packaging Design System',
-      'E-commerce Website',
-      'Digital Marketing Strategy',
-      'Social Media Management'
+      'E-commerce Strategy',
+      'Visual Content & Product Photos'
     ],
     image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+    additionalImages: [
+      'https://images.unsplash.com/photo-1556761223-4c4282c73f77?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+      'https://images.unsplash.com/photo-1621939514649-280e2ee25f60?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'
+    ],
     testimonial: {
       quote: "Genosta transformed our traditional business into a modern brand while keeping our authenticity intact.",
       author: "Ravi Kumar, Founder"
@@ -26,15 +29,18 @@ const projectData = {
   'sparrow-refugee': {
     title: 'Sparrow Refugee',
     category: 'Social Awareness Movement',
-    overview: 'A noble initiative focused on protecting house sparrows through community engagement and educational programs.',
+    overview: 'A mission-driven project focused on saving house sparrows by building awareness among communities, schools, and organizations. Genosta supported their brand launch with digital strategy and campaign creatives.',
     contributions: [
-      'Campaign Strategy',
-      'Educational Content Creation',
-      'School Outreach Programs',
-      'Digital Presence Development',
-      'Community Building'
+      'Campaign Branding',
+      'Social Media Content',
+      'Collaboration Decks',
+      'Community Awareness Posters'
     ],
     image: 'https://images.unsplash.com/photo-1517022812141-23620dba5c23?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+    additionalImages: [
+      'https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+      'https://images.unsplash.com/photo-1470093851219-69951fcbb533?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'
+    ],
     testimonial: {
       quote: "Our message reached thousands thanks to Genosta's strategic approach to digital awareness.",
       author: "Dr. Sarah Chen, Project Lead"
@@ -43,15 +49,18 @@ const projectData = {
   'time-keeper': {
     title: 'Time Keeper',
     category: 'Productivity Desktop Widget',
-    overview: 'An innovative Windows desktop application helping users visualize and manage their time more effectively.',
+    overview: 'A lightweight desktop app that visualizes progress bars for year, month, and day to help users track time and stay motivated. Genosta designed its UI/UX and helped position it as a personal productivity tool.',
     contributions: [
-      'UX/UI Design',
-      'Product Strategy',
-      'Visual Design System',
-      'User Research',
-      'Marketing Planning'
+      'UI Design',
+      'App Icon & Branding',
+      'Positioning & Copywriting',
+      'User Experience Research'
     ],
     image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+    additionalImages: [
+      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+      'https://images.unsplash.com/photo-1461988091159-192601e72e5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'
+    ],
     testimonial: {
       quote: "The intuitive design makes time management feel natural and engaging.",
       author: "Tech Review Weekly"
@@ -64,7 +73,17 @@ const CaseStudy = () => {
   const project = projectData[projectId as keyof typeof projectData];
 
   if (!project) {
-    return <div>Project not found</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold mb-4">Project Not Found</h1>
+          <p className="mb-6">The case study you're looking for doesn't exist.</p>
+          <Button asChild>
+            <Link to="/">Return Home</Link>
+          </Button>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -108,6 +127,23 @@ const CaseStudy = () => {
               </div>
             </div>
 
+            {project.additionalImages && (
+              <div className="mb-12">
+                <h2 className="text-2xl font-semibold mb-6">Project Gallery</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {project.additionalImages.map((image, index) => (
+                    <div key={index} className="rounded-xl overflow-hidden bg-gray-100 aspect-video">
+                      <img
+                        src={image}
+                        alt={`${project.title} - Image ${index + 1}`}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {project.testimonial && (
               <div className="bg-gray-50 p-8 rounded-xl">
                 <blockquote className="text-xl italic text-gray-700 mb-4">
@@ -116,6 +152,15 @@ const CaseStudy = () => {
                 <cite className="text-gray-600 not-italic">— {project.testimonial.author}</cite>
               </div>
             )}
+
+            <div className="mt-12 pt-6 border-t border-gray-200">
+              <Button asChild variant="outline">
+                <Link to="/#projects" className="inline-flex items-center gap-2">
+                  <ArrowLeft size={16} />
+                  View All Projects
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </main>

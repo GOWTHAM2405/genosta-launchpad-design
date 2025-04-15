@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink, ChevronRight, ChevronLeft } from 'lucide-react';
@@ -8,7 +9,8 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Flobi",
+      title: "Flayro Bites",
+      id: "flayro-bites",
       category: "South Indian Snack Brand",
       description: "A traditional South Indian snack brand offering authentic homemade savory delights through their online platform. We crafted their brand identity, designed eye-catching packaging, and developed their digital marketing strategy.",
       image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
@@ -17,6 +19,7 @@ const Projects = () => {
     },
     {
       title: "Sparrow Refugee",
+      id: "sparrow-refugee",
       category: "Social Initiative",
       description: "A noble initiative focused on protecting house sparrows through community engagement. We developed comprehensive digital strategies, created impactful branding, and managed outreach campaigns with schools and organizations.",
       image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
@@ -25,6 +28,7 @@ const Projects = () => {
     },
     {
       title: "Time Keeper",
+      id: "time-keeper",
       category: "Desktop Application",
       description: "An innovative Windows desktop widget that helps users visualize their time progress throughout the year, month, and day. Our team handled the product design, user experience, and marketing strategy development.",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
@@ -139,7 +143,7 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 flex items-end">
                     <div className="p-4 md:p-6">
                       <Link 
-                        to={`/projects/${projects[activeProject].title.toLowerCase().replace(' ', '-')}`}
+                        to={`/projects/${projects[activeProject].id}`}
                         className="inline-flex items-center gap-2 text-white hover:text-genosta-orange transition-colors"
                       >
                         <ExternalLink size={16} />

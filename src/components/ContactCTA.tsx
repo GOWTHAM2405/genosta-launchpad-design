@@ -1,4 +1,3 @@
-
 import { Send, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
@@ -10,13 +9,11 @@ const ContactCTA = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would normally handle the form submission
     console.log('Form submitted:', { email, message });
     setSubmitted(true);
     setEmail('');
     setMessage('');
     
-    // Reset the submitted state after 5 seconds
     setTimeout(() => {
       setSubmitted(false);
     }, 5000);
@@ -28,7 +25,6 @@ const ContactCTA = () => {
         <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="bg-genosta-purple-vivid p-8 md:p-10 text-white relative">
-              {/* Decorative shapes */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-full" />
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-tr-full" />
               
@@ -52,7 +48,7 @@ const ContactCTA = () => {
                   </div>
                 </div>
                 
-                <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+                <Button asChild variant="outline" className="border-white text-black hover:bg-white/20">
                   <a href="#" className="flex items-center gap-2">
                     Learn More About Us <ArrowRight size={16} />
                   </a>

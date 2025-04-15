@@ -1,4 +1,3 @@
-
 import { 
   Palette, 
   TrendingUp, 
@@ -82,9 +81,9 @@ const Services = () => {
 
         <div className="mt-12 text-center">
           <Button asChild size="lg" variant="default" className="bg-black text-white hover:bg-gray-800">
-            <a href="#contact" className="flex items-center gap-2">
+            <a href="#contact" className="flex items-center gap-2 text-white">
               Discuss Your Project
-              <span className="w-2 h-2 bg-gray-700 rounded-full group-hover:scale-150 transition-transform"></span>
+              <span className="w-2 h-2 bg-gray-300 rounded-full group-hover:scale-150 transition-transform"></span>
             </a>
           </Button>
         </div>

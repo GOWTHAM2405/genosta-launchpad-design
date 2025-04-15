@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -32,10 +33,9 @@ const Navbar = () => {
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3">
-          {/* Genosta Logo */}
           <div className="w-10 h-10 relative overflow-hidden animate-blur-in">
             <img 
-              src="/lovable-uploads/77ddd6ca-c7e9-4603-a7c5-2f7942460531.png"
+              src="/lovable-uploads/f02bea32-788d-4446-bb47-3b484a6d12a4.png"
               alt="Genosta Logo"
               className="w-full h-full object-contain"
             />

@@ -58,7 +58,9 @@ const Hero = () => {
           <div className="md:w-1/2 animate-blur-in" style={{ animationDelay: '0.3s' }}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-poppins leading-tight mb-6 text-white">
               <span className="block">We Build</span>
-              <span className="text-gradient">Digital Experiences</span>
+              <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">
+                Digital Experiences
+              </span>
               <span className="block">That Matter</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 mb-8 max-w-lg">

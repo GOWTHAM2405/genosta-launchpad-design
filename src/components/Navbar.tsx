@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -25,6 +24,14 @@ const Navbar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
       isScrolled 
@@ -45,23 +52,37 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="/#services" className="text-gray-800 hover:text-gray-600 transition-colors font-medium">
+          <button 
+            onClick={() => scrollToSection('services')} 
+            className="text-gray-800 hover:text-gray-600 transition-colors font-medium"
+          >
             Services
-          </a>
-          <a href="/#projects" className="text-gray-800 hover:text-gray-600 transition-colors font-medium">
+          </button>
+          <button 
+            onClick={() => scrollToSection('projects')} 
+            className="text-gray-800 hover:text-gray-600 transition-colors font-medium"
+          >
             Projects
-          </a>
-          <a href="/#why-us" className="text-gray-800 hover:text-gray-600 transition-colors font-medium">
+          </button>
+          <button 
+            onClick={() => scrollToSection('why-us')} 
+            className="text-gray-800 hover:text-gray-600 transition-colors font-medium"
+          >
             Why Us
-          </a>
-          <a href="/#about" className="text-gray-800 hover:text-gray-600 transition-colors font-medium">
+          </button>
+          <button 
+            onClick={() => scrollToSection('about')} 
+            className="text-gray-800 hover:text-gray-600 transition-colors font-medium"
+          >
             About
-          </a>
-          <a href="/#testimonials" className="text-gray-800 hover:text-gray-600 transition-colors font-medium">
+          </button>
+          <button 
+            onClick={() => scrollToSection('testimonials')} 
+            className="text-gray-800 hover:text-gray-600 transition-colors font-medium"
+          >
             Testimonials
-          </a>
+          </button>
           <Button asChild variant="default" className="bg-gray-900 text-white hover:bg-gray-800">
             <a href="#contact">
               Get Started
@@ -69,7 +90,6 @@ const Navbar = () => {
           </Button>
         </nav>
 
-        {/* Mobile Menu Button */}
         <button 
           className="md:hidden text-gray-800 hover:text-gray-600"
           onClick={toggleMobileMenu}
@@ -79,46 +99,40 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation */}
       <div className={`md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-sm shadow-md transform transition-transform duration-300 ${
         mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
       }`}>
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-          <a 
-            href="/#services" 
+          <button 
+            onClick={() => scrollToSection('services')}
             className="text-gray-800 hover:text-gray-600 py-2 transition-colors font-medium"
-            onClick={() => setMobileMenuOpen(false)}
           >
             Services
-          </a>
-          <a 
-            href="/#projects" 
+          </button>
+          <button 
+            onClick={() => scrollToSection('projects')}
             className="text-gray-800 hover:text-gray-600 py-2 transition-colors font-medium"
-            onClick={() => setMobileMenuOpen(false)}
           >
             Projects
-          </a>
-          <a 
-            href="/#why-us" 
+          </button>
+          <button 
+            onClick={() => scrollToSection('why-us')}
             className="text-gray-800 hover:text-gray-600 py-2 transition-colors font-medium"
-            onClick={() => setMobileMenuOpen(false)}
           >
             Why Us
-          </a>
-          <a 
-            href="/#about" 
+          </button>
+          <button 
+            onClick={() => scrollToSection('about')}
             className="text-gray-800 hover:text-gray-600 py-2 transition-colors font-medium"
-            onClick={() => setMobileMenuOpen(false)}
           >
             About
-          </a>
-          <a 
-            href="/#testimonials" 
+          </button>
+          <button 
+            onClick={() => scrollToSection('testimonials')}
             className="text-gray-800 hover:text-gray-600 py-2 transition-colors font-medium"
-            onClick={() => setMobileMenuOpen(false)}
           >
             Testimonials
-          </a>
+          </button>
           <Button 
             asChild 
             variant="default"

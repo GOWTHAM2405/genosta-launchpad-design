@@ -144,10 +144,10 @@ const Projects = () => {
           
           <div className="order-1 lg:order-2">
             <div className="relative">
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-genosta-purple/10 rounded-full animate-pulse-subtle -z-10" />
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-genosta-orange/10 rounded-full animate-pulse-subtle -z-10" />
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-genosta-purple/10 rounded-full -z-10" />
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-genosta-orange/10 rounded-full -z-10" />
               
-              <div className={`p-1 rounded-lg overflow-hidden bg-gradient-to-r ${projects[activeProject].color} animate-pulse-subtle shadow-2xl transition-all duration-500`}>
+              <div className={`p-1 rounded-lg overflow-hidden bg-gradient-to-r ${projects[activeProject].color} shadow-2xl transition-all duration-500`}>
                 <div className="relative aspect-video bg-white">
                   <img 
                     src={projects[activeProject].image}
@@ -159,6 +159,7 @@ const Projects = () => {
                       <Link 
                         to={`/projects/${projects[activeProject].id}`}
                         className="inline-flex items-center gap-2 text-white hover:text-genosta-orange transition-colors"
+                        onClick={() => window.scrollTo(0, 0)}
                       >
                         <ExternalLink size={16} />
                         <span className="font-medium">View Case Study</span>

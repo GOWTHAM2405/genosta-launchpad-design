@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink, ChevronRight, ChevronLeft } from 'lucide-react';
@@ -15,7 +14,12 @@ const Projects = () => {
       description: "A traditional South Indian snack brand offering authentic homemade savory delights through their online platform. We crafted their brand identity, designed eye-catching packaging, and developed their digital marketing strategy.",
       image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       features: ["Brand Identity", "Packaging Design", "Digital Marketing", "E-commerce Strategy"],
-      color: "from-genosta-orange to-genosta-purple-vivid"
+      color: "from-genosta-orange to-genosta-purple-vivid",
+      social: {
+        instagram: "https://instagram.com/flayrobites",
+        facebook: "https://facebook.com/flayrobites",
+        website: "https://flayrobites.com"
+      }
     },
     {
       title: "Sparrow Refugee",
@@ -24,7 +28,12 @@ const Projects = () => {
       description: "A noble initiative focused on protecting house sparrows through community engagement. We developed comprehensive digital strategies, created impactful branding, and managed outreach campaigns with schools and organizations.",
       image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       features: ["Digital Strategy", "Community Outreach", "Educational Content", "Brand Development"],
-      color: "from-genosta-purple-vivid to-genosta-blue"
+      color: "from-genosta-purple-vivid to-genosta-blue",
+      social: {
+        instagram: "https://instagram.com/sparrowrefuge",
+        facebook: "https://facebook.com/sparrowrefuge",
+        website: "https://sparrowrefuge.org"
+      }
     },
     {
       title: "Time Keeper",
@@ -33,7 +42,12 @@ const Projects = () => {
       description: "An innovative Windows desktop widget that helps users visualize their time progress throughout the year, month, and day. Our team handled the product design, user experience, and marketing strategy development.",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       features: ["UI/UX Design", "Product Strategy", "Visual Design", "Marketing Planning"],
-      color: "from-genosta-blue to-genosta-sky-blue"
+      color: "from-genosta-blue to-genosta-sky-blue",
+      social: {
+        instagram: "https://instagram.com/timekeeperapp",
+        facebook: "https://facebook.com/timekeeperapp",
+        website: "https://timekeeper.app"
+      }
     }
   ];
 
@@ -138,7 +152,7 @@ const Projects = () => {
                   <img 
                     src={projects[activeProject].image}
                     alt={projects[activeProject].title}
-                    className="w-full h-full object-cover transition-all duration-500 hover:scale-105 mix-blend-luminosity hover:mix-blend-normal"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 flex items-end">
                     <div className="p-4 md:p-6">

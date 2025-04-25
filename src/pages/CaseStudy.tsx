@@ -1,6 +1,5 @@
-
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Facebook, Instagram, ExternalLink } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -24,6 +23,11 @@ const projectData = {
     testimonial: {
       quote: "Genosta transformed our traditional business into a modern brand while keeping our authenticity intact.",
       author: "Ravi Kumar, Founder"
+    },
+    social: {
+      instagram: 'https://www.instagram.com/flayro_bites/',
+      facebook: 'https://www.facebook.com/flayro.bites/',
+      website: 'https://flayro-bites.com/'
     }
   },
   'sparrow-refugee': {
@@ -44,6 +48,11 @@ const projectData = {
     testimonial: {
       quote: "Our message reached thousands thanks to Genosta's strategic approach to digital awareness.",
       author: "Dr. Sarah Chen, Project Lead"
+    },
+    social: {
+      instagram: 'https://www.instagram.com/sparrow_refugee/',
+      facebook: 'https://www.facebook.com/sparrowrefugee/',
+      website: 'https://sparrow-refugee.com/'
     }
   },
   'time-keeper': {
@@ -64,6 +73,11 @@ const projectData = {
     testimonial: {
       quote: "The intuitive design makes time management feel natural and engaging.",
       author: "Tech Review Weekly"
+    },
+    social: {
+      instagram: 'https://www.instagram.com/timekeeperapp/',
+      facebook: 'https://www.facebook.com/timekeeperapp/',
+      website: 'https://timekeeperapp.com/'
     }
   }
 };
@@ -145,13 +159,35 @@ const CaseStudy = () => {
             )}
 
             {project.testimonial && (
-              <div className="bg-gray-50 p-8 rounded-xl">
+              <div className="bg-gray-50 p-8 rounded-xl mb-8">
                 <blockquote className="text-xl italic text-gray-700 mb-4">
                   "{project.testimonial.quote}"
                 </blockquote>
                 <cite className="text-gray-600 not-italic">— {project.testimonial.author}</cite>
               </div>
             )}
+
+            <div className="bg-gray-50 p-8 rounded-xl mb-12">
+              <h2 className="text-2xl font-semibold mb-6">Connect with {project.title}</h2>
+              <div className="flex gap-4">
+                <Button asChild variant="outline" size="icon">
+                  <a href={project.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <Instagram className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="icon">
+                  <a href={project.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <Facebook className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button asChild variant="outline">
+                  <a href={project.social.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    <ExternalLink className="h-5 w-5" />
+                    Visit Website
+                  </a>
+                </Button>
+              </div>
+            </div>
 
             <div className="mt-12 pt-6 border-t border-gray-200">
               <Button asChild variant="outline">

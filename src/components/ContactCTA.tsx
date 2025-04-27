@@ -43,7 +43,7 @@ const ContactCTA = () => {
                     </div>
                     <div>
                       <h4 className="font-medium">Email Us</h4>
-                      <p className="text-white/80">hello@genosta.com</p>
+                      <p className="text-white/80">genosta.in@gmailcom</p>
                     </div>
                   </div>
                 </div>

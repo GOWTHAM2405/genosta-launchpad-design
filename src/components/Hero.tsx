@@ -73,7 +73,7 @@ const Hero = () => {
                   Get Started <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+              <Button asChild variant="outline" size="lg" className="border-white text-black hover:bg-white/10">
                 <a href="#services">Our Services</a>
               </Button>
             </div>

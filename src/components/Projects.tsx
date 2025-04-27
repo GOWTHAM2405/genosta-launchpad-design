@@ -12,7 +12,7 @@ const Projects = () => {
       id: "flayro-bites",
       category: "South Indian Snack Brand",
       description: "A traditional South Indian snack brand offering authentic homemade savory delights through their online platform. We crafted their brand identity, designed eye-catching packaging, and developed their digital marketing strategy.",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "project-images/flayro_bites.png",
       features: ["Brand Identity", "Packaging Design", "Digital Marketing", "E-commerce Strategy"],
       color: "from-genosta-orange to-genosta-purple-vivid",
       social: {
@@ -26,7 +26,7 @@ const Projects = () => {
       id: "sparrow-refugee",
       category: "Social Initiative",
       description: "A noble initiative focused on protecting house sparrows through community engagement. We developed comprehensive digital strategies, created impactful branding, and managed outreach campaigns with schools and organizations.",
-      image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "project-images/sparrow_refugee_logo.png",
       features: ["Digital Strategy", "Community Outreach", "Educational Content", "Brand Development"],
       color: "from-genosta-purple-vivid to-genosta-blue",
       social: {
@@ -40,7 +40,7 @@ const Projects = () => {
       id: "time-keeper",
       category: "Desktop Application",
       description: "An innovative Windows desktop widget that helps users visualize their time progress throughout the year, month, and day. Our team handled the product design, user experience, and marketing strategy development.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      image: "project-images/Time_keeper_logo.png",
       features: ["UI/UX Design", "Product Strategy", "Visual Design", "Marketing Planning"],
       color: "from-genosta-blue to-genosta-sky-blue",
       social: {
@@ -148,25 +148,30 @@ const Projects = () => {
               <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-genosta-orange/10 rounded-full -z-10" />
               
               <div className={`p-1 rounded-lg overflow-hidden bg-gradient-to-r ${projects[activeProject].color} shadow-2xl transition-all duration-500`}>
-                <div className="relative aspect-video bg-white">
-                  <img 
-                    src={projects[activeProject].image}
-                    alt={projects[activeProject].title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 flex items-end">
-                    <div className="p-4 md:p-6">
-                      <Link 
-                        to={`/projects/${projects[activeProject].id}`}
-                        className="inline-flex items-center gap-2 text-white hover:text-genosta-orange transition-colors"
-                        onClick={() => window.scrollTo(0, 0)}
-                      >
-                        <ExternalLink size={16} />
-                        <span className="font-medium">View Case Study</span>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+              <div className={`p-1 rounded-lg overflow-hidden bg-gradient-to-r ${projects[activeProject].color} shadow-2xl transition-all duration-500`}>
+  <div className="relative aspect-video bg-white group overflow-hidden rounded-lg">
+    <img 
+      src={projects[activeProject].image}
+      alt={projects[activeProject].title}
+      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+
+    {/* Animated button */}
+    <div className="absolute inset-0 flex items-end justify-center p-4">
+      <Link 
+        to={`/projects/${projects[activeProject].id}`}
+        onClick={() => window.scrollTo(0, 0)}
+        className="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out
+                   bg-white/20 backdrop-blur-md text-black px-5 py-2 rounded-full flex items-center gap-2 font-semibold
+                   hover:bg-white/30 hover:text-genosta-orange"
+      >
+        <ExternalLink size={16} />
+        <span>View Case Study</span>
+      </Link>
+    </div>
+  </div>
+</div>
+
               </div>
             </div>
           </div>

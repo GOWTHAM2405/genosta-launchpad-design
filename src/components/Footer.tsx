@@ -1,5 +1,4 @@
-
-import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -20,20 +19,32 @@ const Footer = () => {
               for startups and small businesses.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white/70 hover:text-genosta-purple transition-colors">
+              <a 
+                href="https://www.facebook.com/share/18mYXP6zQL/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-white/70 hover:text-genosta-purple transition-colors"
+              >
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-white/70 hover:text-genosta-purple transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-white/70 hover:text-genosta-purple transition-colors">
+              <a 
+                href="https://www.instagram.com/genosta.in?igsh=MWF0enYycHA2MDNveQ==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-white/70 hover:text-genosta-purple transition-colors"
+              >
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-white/70 hover:text-genosta-purple transition-colors">
+              <a 
+                href="https://www.linkedin.com/company/genosta/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-white/70 hover:text-genosta-purple transition-colors"
+              >
                 <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-white/70 hover:text-genosta-purple transition-colors">
-                <Github size={20} />
               </a>
             </div>
           </div>

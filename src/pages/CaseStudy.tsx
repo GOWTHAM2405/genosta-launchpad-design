@@ -15,10 +15,10 @@ const projectData = {
       'E-commerce Strategy',
       'Visual Content & Product Photos'
     ],
-    image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+    image: '/project-images/fb_thattai1.png',
     additionalImages: [
-      'https://images.unsplash.com/photo-1556761223-4c4282c73f77?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
-      'https://images.unsplash.com/photo-1621939514649-280e2ee25f60?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'
+      '/project-images/fb_thattai2.png',
+      '/project-images/flayro_bites.png'
     ],
     testimonial: {
       quote: "Genosta transformed our traditional business into a modern brand while keeping our authenticity intact.",
@@ -40,10 +40,10 @@ const projectData = {
       'Collaboration Decks',
       'Community Awareness Posters'
     ],
-    image: 'https://images.unsplash.com/photo-1517022812141-23620dba5c23?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+    image: '/project-images/sr1.jpeg',
     additionalImages: [
-      'https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
-      'https://images.unsplash.com/photo-1470093851219-69951fcbb533?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'
+      '/project-images/sparrow_refuge_nest.jpg',
+      '/project-images/sr2.png'
     ],
     testimonial: {
       quote: "Our message reached thousands thanks to Genosta's strategic approach to digital awareness.",
@@ -125,7 +125,7 @@ const CaseStudy = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-105 transition-transform"
               />
             </div>
 

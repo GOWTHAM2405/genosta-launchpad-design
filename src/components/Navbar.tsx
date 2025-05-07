@@ -92,7 +92,7 @@ const Navbar = () => {
           </button>
           <Button asChild variant="default" className="bg-gray-900 text-white hover:bg-gray-800">
             <a href="#contact">
-              Get Started
+              Request Services
             </a>
           </Button>
         </nav>

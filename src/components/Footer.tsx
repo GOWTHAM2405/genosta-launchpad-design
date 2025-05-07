@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Youtube, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -45,6 +45,24 @@ const Footer = () => {
                 className="text-white/70 hover:text-genosta-purple transition-colors"
               >
                 <Linkedin size={20} />
+              </a>
+              <a 
+                href="https://www.youtube.com/channel/example" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="text-white/70 hover:text-genosta-purple transition-colors"
+              >
+                <Youtube size={20} />
+              </a>
+              <a 
+                href="https://twitter.com/example" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="X (Twitter)"
+                className="text-white/70 hover:text-genosta-purple transition-colors"
+              >
+                <Twitter size={20} />
               </a>
             </div>
           </div>

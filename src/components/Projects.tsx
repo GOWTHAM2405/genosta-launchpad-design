@@ -18,6 +18,8 @@ const Projects = () => {
       social: {
         instagram: "https://instagram.com/flayrobites",
         facebook: "https://facebook.com/flayrobites",
+        youtube: 'https://www.youtube.com/channel/example',
+        Linkedin: 'https://www.linkedin.com/company/example/',
         website: "https://flayrobites.com"
       }
     },
@@ -32,6 +34,8 @@ const Projects = () => {
       social: {
         instagram: "https://instagram.com/sparrowrefuge",
         facebook: "https://facebook.com/sparrowrefuge",
+        youtube: 'https://www.youtube.com/channel/example',
+        Linkedin: 'https://www.linkedin.com/company/example/',
         website: "https://sparrowrefuge.org"
       }
     },
@@ -46,6 +50,8 @@ const Projects = () => {
       social: {
         instagram: "https://instagram.com/timekeeperapp",
         facebook: "https://facebook.com/timekeeperapp",
+        youtube: 'https://www.youtube.com/channel/example',
+        Linkedin: 'https://www.linkedin.com/company/example/',
         website: "https://timekeeper.app"
       }
     }
@@ -148,30 +154,26 @@ const Projects = () => {
               <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-genosta-orange/10 rounded-full -z-10" />
               
               <div className={`p-1 rounded-lg overflow-hidden bg-gradient-to-r ${projects[activeProject].color} shadow-2xl transition-all duration-500`}>
-              <div className={`p-1 rounded-lg overflow-hidden bg-gradient-to-r ${projects[activeProject].color} shadow-2xl transition-all duration-500`}>
-  <div className="relative aspect-video bg-white group overflow-hidden rounded-lg">
-    <img 
-      src={projects[activeProject].image}
-      alt={projects[activeProject].title}
-      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-    />
+                <div className="relative aspect-video bg-white group overflow-hidden rounded-lg">
+                  <img 
+                    src={projects[activeProject].image}
+                    alt={projects[activeProject].title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
 
-    {/* Animated button */}
-    <div className="absolute inset-0 flex items-end justify-center p-4">
-      <Link 
-        to={`/projects/${projects[activeProject].id}`}
-        onClick={() => window.scrollTo(0, 0)}
-        className="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out
-                   bg-white/20 backdrop-blur-md text-black px-5 py-2 rounded-full flex items-center gap-2 font-semibold
-                   hover:bg-white/30 hover:text-genosta-orange"
-      >
-        <ExternalLink size={16} />
-        <span>View Case Study</span>
-      </Link>
-    </div>
-  </div>
-</div>
-
+                  {/* Button always visible */}
+                  <div className="absolute inset-0 flex items-end justify-center p-4">
+                    <Link 
+                      to={`/projects/${projects[activeProject].id}`}
+                      onClick={() => window.scrollTo(0, 0)}
+                      className="bg-white/20 backdrop-blur-md text-black px-5 py-2 rounded-full flex items-center gap-2 font-semibold
+                                 hover:bg-white/30 hover:text-genosta-orange transition-all duration-500 ease-out"
+                    >
+                      <ExternalLink size={16} />
+                      <span>View Case Study</span>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Facebook, Instagram, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Facebook, Instagram, ExternalLink, Linkedin ,Youtube} from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -27,6 +27,8 @@ const projectData = {
     social: {
       instagram: 'https://www.instagram.com/flayro_bites/',
       facebook: 'https://www.facebook.com/flayro.bites/',
+      Linkedin: 'https://www.linkedin.com/company/sparrow-refugee',
+      youtube: 'https://www.youtube.com/channel/example',
       website: 'https://flayro-bites.com/'
     }
   },
@@ -50,8 +52,10 @@ const projectData = {
       author: "Dr. Sarah Chen, Project Lead"
     },
     social: {
-      instagram: 'https://www.instagram.com/sparrow_refugee/',
+      instagram: 'https://www.instagram.com/sparrowrefugee?igsh=NHByanYyMWpqOXhm',
       facebook: 'https://www.facebook.com/sparrowrefugee/',
+      Linkedin: 'https://www.linkedin.com/company/sparrow-refugee',
+      youtube: 'https://www.youtube.com/channel/example',
       website: 'https://sparrow-refugee.com/'
     }
   },
@@ -77,6 +81,8 @@ const projectData = {
     social: {
       instagram: 'https://www.instagram.com/timekeeperapp/',
       facebook: 'https://www.facebook.com/timekeeperapp/',
+      Linkedin: 'https://www.linkedin.com/company/sparrow-refugee',
+      youtube: 'https://www.youtube.com/channel/example',
       website: 'https://timekeeperapp.com/'
     }
   }
@@ -180,10 +186,27 @@ const CaseStudy = () => {
                     <Facebook className="h-5 w-5" />
                   </a>
                 </Button>
+                <Button asChild variant="outline" size="icon">
+                  <a href={project.social.Linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </Button>
                 <Button asChild variant="outline">
                   <a href={project.social.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     <ExternalLink className="h-5 w-5" />
                     Visit Website
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="icon">
+                  <a href={project.social.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M23.498 6.186a2.99 2.99 0 0 0-2.106-2.116C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.392.57a2.99 2.99 0 0 0-2.106 2.116C0 8.07 0 12 0 12s0 3.93.502 5.814a2.99 2.99 0 0 0 2.106 2.116C4.5 20.5 12 20.5 12 20.5s7.5 0 9.392-.57a2.99 2.99 0 0 0 2.106-2.116C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.75 15.02V8.98L15.5 12l-5.75 3.02Z" />
+                    </svg>
                   </a>
                 </Button>
               </div>

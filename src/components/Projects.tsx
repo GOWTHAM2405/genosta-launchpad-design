@@ -12,7 +12,7 @@ const Projects = () => {
       id: "flayro-bites",
       category: "South Indian Snack Brand",
       description: "A traditional South Indian snack brand offering authentic homemade savory delights through their online platform. We crafted their brand identity, designed eye-catching packaging, and developed their digital marketing strategy.",
-      image: "project-images/flayro_bites.png",
+      image: "project-images/flobi_rec_logo.png",
       features: ["Brand Identity", "Packaging Design", "Digital Marketing", "E-commerce Strategy"],
       color: "from-genosta-orange to-genosta-purple-vivid",
       social: {
